@@ -1,7 +1,7 @@
-# Useful, Not Just Plausible
+# Bringing Physics Simulation and World Models Together for Robotic Manipulation
 
-Website for the proposed CoRL 2026 workshop **"Useful, Not Just Plausible: Bridging
-Physics Simulation and Learned World Models for Robot Control."**
+Website for the proposed CoRL 2026 workshop **"Bringing Physics Simulation and World
+Models Together for Robotic Manipulation."**
 
 ## Acknowledgements
 

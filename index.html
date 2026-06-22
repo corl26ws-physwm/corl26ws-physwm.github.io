@@ -21,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-  <title>CoRL 2026 - Useful, Not Just Plausible: Bridging Physics Simulation and Learned World Models for Robot Control</title>
+  <title>CoRL 2026 - Bringing Physics Simulation and World Models Together for Robotic Manipulation</title>
   <link rel="stylesheet" href="css/style.css">
 
   <style>
@@ -122,14 +122,16 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html#organizers">Organizers</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#sponsors">Sponsors</a>
+        </li>
       </ul>
     </div>
   </nav>
 
   <div class="title-container">
     <div style="text-align: center;">
-      <h1 style="width:85%;margin:auto;color:#bf5700;font-size:2.4em;font-weight:800;line-height:1.15;">Useful, Not Just Plausible</h1>
-      <h2 style="width:85%;margin:auto;color:#bf5700;font-size:2.4em;font-weight:800;margin-top:14px;line-height:1.15;">Bridging Physics Simulation and Learned World Models for Robot Control</h2>
+      <h1 style="width:85%;margin:auto;color:#bf5700;font-size:2.4em;font-weight:800;line-height:1.15;">Bringing Physics Simulation and World Models Together for Robotic Manipulation</h1>
       <div class="subtitle" style="color:#d19f72 ; margin: 20px; margin-bottom: -10px;">
         <b>CoRL 2026 | Austin, Texas, USA | November 9, 2026</b><br>
         Email: <a href="mailto:corl26physwm@gmail.com" style="color: #ffffff;">corl26physwm@gmail.com</a><br>
@@ -154,26 +156,22 @@
     <div class="section" id="overview" style="align-content:center;">
       <h2>Overview</h2>
       <p>
-        Recent advancements in learned world models have demonstrated remarkable success in generating visually plausible futures from static images and videos. However, for interaction-rich robot intelligence, especially robot manipulation, visual plausibility is vastly insufficient. A model that perfectly predicts pixel flow may fundamentally fail to capture the discontinuous contact dynamics, frictional constraints, and underactuated physics required for reliable action selection and closed-loop control. On the other hand, analytical physics simulations have been enabling robotic control and planning to capture the underlying physics, though they lack the generality that learned models offer. This workshop challenges the prevailing trend of purely generative world modeling by asking a critical question: <b>How can analytical physics simulation enhance learned world models for better robotic control?</b>
+        Recent advances in learned world models have shown impressive ability to generate visually plausible futures from images and videos, but visual prediction alone is insufficient for interaction-rich robot manipulation. A model that predicts pixel flow may still miss contact dynamics, frictional contact constraints, and underactuated physics needed for reliable control. On the other hand, modern analytical physics simulators have historically been relied on to show the great success in modeling the underlying contact physics and enabling robotic control. Thus, a natural question to ask is <b>How can the expertise of modern simulation development enhance world model learning for better robotic control?</b>
       </p>
 
       <p>
-        We aim to bridge the historically disparate communities of physics simulation and deep representation learning and world modeling. The workshop will critically examine whether scaling up world modeling based on videos will be enough to capture the complex physics involved in robot control and ensure robust generalization in real-world scenarios. By bringing together experts in simulator development, robot control, and foundation models, we will also together explore how to inject structural physics priors into learned representations, how to integrate physics simulators with learned world models, how robots can exploit imperfect models for control, and what evaluation benchmarks can finally separate visually convincing models from dynamically actionable ones.
-      </p>
-
-      <p>
-        This half-day event is highly relevant to the CoRL community as it targets the immediate bottleneck in deploying foundation models to physical hardware. The intended audience includes researchers and practitioners actively struggling with the sim-to-real gap, long-horizon compounding errors, and the integration of neural world models into robot learning and control pipelines.
+        We aim to bridge the historically disparate communities of physics simulation and deep representation-based world modeling. This half-day workshop will be discussing around the following four questions.
       </p>
     </div>
 
     <div class="section" style="align-content:center;">
-      <h2>Core Challenges / Research Questions</h2>
-      <p>This workshop will focus on the following specific research questions at the intersection of world models, physics simulation, and robot learning:</p>
+      <h2>Research Questions</h2>
+      <p>This workshop will focus on the following specific research questions at the intersection of world models, physics simulation, and control for manipulation:</p>
       <ul>
-        <li><b>Q1 &mdash; The Representation Bottleneck: Can physical understanding emerge from training purely on videos?</b> Recent generative models predict visually plausible futures, but visual prediction is vastly insufficient for interaction. What physical quantities (e.g., discontinuous contact, frictional constraints, contact forces) cannot be reliably inferred from passive video data? What benchmarks and evaluation protocols are needed to prove a model captures the underactuated physics required for real manipulation and locomotion, rather than just generating convincing pixels? How do we scale up other modalities for generative world models, such as tactile data?</li>
-        <li><b>Q2 &mdash; Should physical priors be injected into learned world models? If so, how?</b> The bitter lesson suggests that designing and injecting manually created priors will eventually lose compared to scaling up. Is this true in the context of world models built for robotic control? If physical priors are still necessary, at least in the short run, how can we introduce such priors without restricting learning?</li>
-        <li><b>Q3 &mdash; Bridging the Gap: How can analytical simulation and neural world models be integrated?</b> Should physics simulators be relegated to providing pre-training data, or should they provide structural priors, differentiable objectives, and regularizers for learned world models? Conversely, how can learned representations be used to improve rigid simulators via system identification, residual dynamics, and real-to-sim contact correction?</li>
-        <li><b>Q4 &mdash; Exploiting Imperfection: How should robot learning handle biased models?</b> Both analytical simulators and learned world models are, fundamentally, biased approximations of reality. Rather than futilely chasing perfect physical fidelity, how can robot learning actively exploit these biases? How must control policies be designed to reason about model uncertainty, compounding errors, and exploitable simulator artifacts without failing in the real world?</li>
+        <li><b>Q1 &mdash; Why do robots need predictive models?</b> Imitation learning and model-free RL have achieved impressive manipulation results, but deployment still requires reasoning about physics understanding, long-horizon consequences, safety, and failure recovery. What roles should predictive models&mdash;including physics simulators and learned world models&mdash;play? When are they essential, and what capabilities remain difficult to obtain from model-free learning alone?</li>
+        <li><b>Q2 &mdash; What makes a world model useful for robotic manipulation?</b> Visually plausible prediction is not enough for control. A useful world model should capture the aspects of physics that affect action selection, such as contact transitions. Which physical quantities can be learned from passive video, which require interaction or additional modalities, and what benchmarks can verify that a model is control-useful rather than only visually convincing?</li>
+        <li><b>Q3 &mdash; How should predictive models be built?</b> Predictive models span analytical simulators, video world models, structured neural models, and hybrid neural&ndash;physics systems. The community has not yet converged on a specific method. What should be scaled purely from data, and what physical structure should be built in? In light of the bitter lesson, when do physics priors help rather than restrict learning, and how can simulators, interaction data, and learned representations be combined for a more effective modeling paradigm?</li>
+        <li><b>Q4 &mdash; How should robotic manipulation handle imperfect predictive models?</b> Eventually, all simulators and learned world models are biased approximations of reality. Rather than pursuing perfect fidelity, how can manipulation handle imperfect predictive models in policy acquisition, data generation, and evaluation? How should control policies reason about model uncertainty, compounding error, and exploitable artifacts without failing in the real world?</li>
     </ul>
     <br><br>
   </div>
@@ -202,7 +200,7 @@
           <a href="http://yann.lecun.com/" target="_blank"><img src="imgs/speakers/yann_lecun.jpg" class="rounded-circle" alt="Yann LeCun" width="140" height="140" style="object-fit: cover;"></a>
           <h5 style="margin-bottom:0em;"><a href="http://yann.lecun.com/" target="_blank">Yann LeCun</a></h5>
           New York University<br>
-          <span style="display:inline-block;margin-top:4px;padding:1px 9px;border-radius:10px;font-size:0.8em;background:#fdecd9;color:#bf5700;font-weight:600;">Speaker &amp; Panelist &middot; Invited</span>
+          <span style="display:inline-block;margin-top:4px;padding:1px 9px;border-radius:10px;font-size:0.8em;background:#e7f3e7;color:#2e7d32;font-weight:600;">Speaker &amp; Panelist &middot; Invited</span>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 profile" style="padding-bottom: 30px;">
           <a href="https://yunzhuli.github.io/" target="_blank"><img src="imgs/speakers/yunzhu_li.jpg"
@@ -233,30 +231,30 @@
               
               <div class="section" id="schedule" style="align-content:center;">
                 <h2>Event Schedule</h2>
-                <p style="text-align:center;"><em>The workshop is a half-day, in-person event on November 9, 2026. Exact times will be announced once the CoRL program is finalized; the planned structure is below.</em></p>
+                <p style="text-align:center;"><em>The workshop is a half-day, in-person event. Absolute start times will be announced once the CoRL program is finalized; the planned structure is below.</em></p>
                 <table class="calculator table-borderless" style="text-align:left; margin: 0 auto;">
                   <tr>
-                    <td class="noborder">TBD</td>
+                    <td class="noborder">10 min</td>
                     <td class="noborder"><b>Opening Remarks</b></td>
                   </tr>
                   <tr>
-                    <td class="noborder">~2 hours</td>
+                    <td class="noborder">2 hours</td>
                     <td class="noborder"><b>Invited Speaker Presentations</b> (four talks, ~25 min each)</td>
                   </tr>
                   <tr>
-                    <td class="noborder">~30 min</td>
+                    <td class="noborder">30 min</td>
                     <td class="noborder"><b>Contributed Spotlight Presentations</b></td>
                   </tr>
                   <tr>
-                    <td class="noborder">~30 min</td>
-                    <td class="noborder"><b>Coffee Break &amp; Poster Session</b></td>
+                    <td class="noborder">30 min</td>
+                    <td class="noborder"><b>Coffee Break &amp; Poster and Demo Session</b></td>
                   </tr>
                   <tr>
-                    <td class="noborder">~1 hour</td>
+                    <td class="noborder">1 hour</td>
                     <td class="noborder"><b>Panel Discussion with Live Q&amp;A</b></td>
                   </tr>
                   <tr>
-                    <td class="noborder">TBD</td>
+                    <td class="noborder">10 min</td>
                     <td class="noborder"><b>Awards &amp; Closing Remarks</b></td>
                   </tr>
                 </table>
@@ -281,7 +279,7 @@
     
         <h2>Call for Papers</h2>
 
-        <h4> Submission Portal: <b>OpenReview link to be announced</b></h4>
+        <h4> Submission Portal: <b>OpenReview (link to be announced)</b></h4>
 
         <p>
           We cordially invite paper submissions relevant to the following (non-exhaustive) topics:
@@ -307,7 +305,7 @@
           <li><b>Dual Submission:</b> We welcome submissions that are under review or recently published at relevant venues.</li>
           <li><b>Non-Archival:</b> This workshop is non-archival. Accepted papers will be posted on the workshop website.</li>
           <li><b>Presentation:</b> Accepted papers will be presented in an interactive poster session, with the top 3&ndash;5 papers selected for oral spotlight presentations. Authors are expected to present in person.</li>
-          <li><b>Best Submission Award:</b> A Best Workshop Submission Award (anticipated $500 cash prize) will be presented, subject to CoRL policy and sponsor approval.</li>
+          <li><b>Best Submission Award:</b> A Best Workshop Submission Award ($500 cash prize, sponsored by <a href="https://www.daxo-robotics.com/" target="_blank">DAXO Robotics</a>) will be presented, subject to CoRL policy.</li>
         </ul>
 
         <br>
@@ -325,7 +323,7 @@
                   <div class="org-item profile">
                     <a href="https://www.yixuanwang.me/" target="_blank"><img src="imgs/organizers/yixuan_wang.jpg" class="rounded-circle" alt="Yixuan Wang"></a>
                     <h5><a href="https://www.yixuanwang.me/" target="_blank">Yixuan Wang</a></h5>
-                    <div class="org-aff">Columbia University</div>
+                    <div class="org-aff">Columbia University &amp; NVIDIA</div>
                   </div>
                   <div class="org-item profile">
                     <a href="https://gaoyuezhou.github.io/" target="_blank"><img src="imgs/organizers/gaoyue_zhou.jpg" class="rounded-circle" alt="Gaoyue Zhou" style="object-position: 50% 20%;"></a>
@@ -368,6 +366,17 @@
                     <div class="org-aff">Yale University</div>
                   </div>
       </div>
+    </div>
+
+    <div class="section" id="sponsors" style="text-align: center; padding: 10px;">
+      <h2>Sponsors</h2>
+      <br>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:40px;">
+        <a href="https://www.daxo-robotics.com/" target="_blank">
+          <img src="imgs/sponsor/DAXO_Horz_Single_Black.png" alt="DAXO Robotics" style="max-height:80px; max-width:260px; width:auto; height:auto;">
+        </a>
+      </div>
+      <br>
     </div>
 
   </div>
